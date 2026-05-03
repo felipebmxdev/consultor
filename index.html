@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Felipe Díaz | Analytics & AI Transformation</title>
+  <meta name="description" content="Consultor en Analytics, Inteligencia Artificial y Transformación Digital. +15 años de experiencia en seguros y salud." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Canvas partículas de fondo -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">Felipe Díaz</a>
+      <ul class="nav__links">
+        <li><a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a></li>
+        <li><a href="#servicios" data-i18n="nav.services">Servicios</a></li>
+        <li><a href="#metodologia" data-i18n="nav.method">Metodología</a></li>
+        <li><a href="#casos" data-i18n="nav.cases">Casos</a></li>
+        <li><a href="#contacto" class="nav__cta" data-i18n="nav.cta">Hablemos</a></li>
+      </ul>
+      <button class="nav__burger" id="burger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+        <span class="lang-toggle__active">ES</span>
+        <span class="lang-toggle__sep">|</span>
+        <span class="lang-toggle__inactive">EN</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <div class="hero__bg"></div>
+    <!-- Orbes decorativos -->
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <!-- Grid lines decorativas -->
+    <div class="hero__grid-lines">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+          <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+            <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(108,99,255,0.06)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+    <div class="container hero__content">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        <span data-i18n="hero.badge">Analytics &amp; AI Transformation</span>
+      </div>
+      <h1 class="hero__title"><span data-i18n="hero.title">Convierto datos en</span><br /><span class="gradient-text" data-i18n="hero.title.span">decisiones que generan impacto.</span></h1>
+      <p class="hero__sub" data-i18n-html="hero.sub">Ayudo a organizaciones de <strong>seguros y salud</strong> a transformar sus operaciones con analítica avanzada, automatización e inteligencia artificial — con foco en resultados financieros y eficiencia real.</p>
+      <div class="hero__actions">
+        <a href="#contacto" class="btn btn--primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span data-i18n="hero.btn1">Agenda una sesión</span>
+        </a>
+        <a href="#servicios" class="btn btn--ghost" data-i18n="hero.btn2">Ver servicios</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__num counter" data-target="15">0</span><span class="stat__num">+</span>
+          <span class="stat__label" data-i18n="hero.stat1">Años de experiencia</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num counter" data-target="80">0</span><span class="stat__num">%</span>
+          <span class="stat__label" data-i18n="hero.stat2">Reducción tiempos operativos</span>
+        </div>
+        <div class="stat__divider"></div>
+        <div class="stat">
+          <span class="stat__num">2</span>
+          <span class="stat__label" data-i18n="hero.stat3">Sectores especializados</span>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="hero__scroll">
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- SECTORES NICHO -->
+  <section class="niches section--dark">
+    <div class="container niches__inner">
+      <p class="niches__label" data-i18n="niches.label">Especialización sectorial</p>
+      <div class="niches__grid">
+        <div class="niche-card">
+          <div class="niche-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 data-i18n="niches.health.title">Sector Salud</h3>
+            <p data-i18n="niches.health.desc">Cuentas médicas, redes IPS, gestión de prestadores, control presupuestal y analítica de servicios de salud.</p>
+          </div>
+        </div>
+        <div class="niche-card">
+          <div class="niche-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 7H6a2 2 0 00-2 2v9a2 2 0 002 2h9a2 2 0 002-2v-3M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M9 7h6m-3 4v4m-2-2h4"/>
+            </svg>
+          </div>
+          <div>
+            <h3 data-i18n="niches.insurance.title">Sector Seguros</h3>
+            <p data-i18n="niches.insurance.desc">Pricing, reservas, riesgo actuarial, automatización de procesos de emisión e indemnización.</p>
+          </div>
+        </div>
+        <div class="niche-card">
+          <div class="niche-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 data-i18n="niches.digital.title">Transformación Digital</h3>
+            <p data-i18n="niches.digital.desc">Estrategia data-driven, gobierno del dato y cultura analítica para organizaciones en evolución.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE MÍ -->
+  <section class="about section" id="sobre-mi">
+    <div class="container about__grid">
+      <div class="about__text">
+        <span class="section-tag" data-i18n="about.tag">Sobre mí</span>
+        <h2 class="section-title" data-i18n-html="about.title">Negocio + Datos + AI.<br />Los tres juntos.</h2>
+        <p data-i18n-html="about.p1">Soy Felipe Díaz, consultor en Analytics &amp; AI con más de 15 años de experiencia liderando transformaciones en los sectores de <strong>seguros y salud</strong>. Empecé en operaciones, entendí el negocio desde adentro, y evolucioné hacia el liderazgo de soluciones analíticas de alto impacto.</p>
+        <p data-i18n-html="about.p2">He liderado equipos multidisciplinarios articulando tecnología, analítica y estrategia con vicepresidencias y áreas de negocio. Mi diferencial es que hablo el idioma del negocio <em>y</em> el de los datos — y los conecto para generar resultados reales.</p>
+        <ul class="about__list">
+          <li><span class="check">✓</span> <span data-i18n="about.edu1">Magíster en Gerencia de Proyectos — Politécnico Grancolombiano</span></li>
+          <li><span class="check">✓</span> <span data-i18n="about.edu2">Especialización en Inteligencia de Negocios</span></li>
+          <li><span class="check">✓</span> <span data-i18n="about.edu3">Ingeniería Industrial</span></li>
+          <li><span class="check">✓</span> <span data-i18n="about.edu4">Big Data &amp; ML con Google Cloud Platform</span></li>
+          <li><span class="check">✓</span> <span data-i18n="about.edu5">Desarrollo de Chatbots con OpenAI</span></li>
+        </ul>
+        <a href="https://www.linkedin.com/in/felipe-andrés-díaz-avellaneda-199b50138" target="_blank" rel="noopener" class="btn btn--primary" style="margin-top:1.5rem">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <span data-i18n="about.linkedin">Conectemos en LinkedIn</span>
+        </a>
+      </div>
+      <div class="about__visual">
+        <div class="about__card">
+          <!-- Gráfico decorativo SVG -->
+          <div class="about__chart">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:#6c63ff;stop-opacity:0.4"/>
+                  <stop offset="100%" style="stop-color:#6c63ff;stop-opacity:0"/>
+                </linearGradient>
+              </defs>
+              <!-- Area fill -->
+              <path d="M0,90 L30,75 L60,60 L90,45 L120,30 L150,20 L180,10 L200,8 L200,120 L0,120 Z" fill="url(#chartGrad)"/>
+              <!-- Line -->
+              <path d="M0,90 L30,75 L60,60 L90,45 L120,30 L150,20 L180,10 L200,8" fill="none" stroke="#6c63ff" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Dots -->
+              <circle cx="0" cy="90" r="4" fill="#6c63ff"/>
+              <circle cx="60" cy="60" r="4" fill="#6c63ff"/>
+              <circle cx="120" cy="30" r="4" fill="#00d4aa"/>
+              <circle cx="200" cy="8" r="5" fill="#00d4aa" opacity="0.9"/>
+              <!-- Glow dot final -->
+              <circle cx="200" cy="8" r="10" fill="#00d4aa" opacity="0.15"/>
+            </svg>
+            <p class="about__chart-label" data-i18n="about.chart.label">Impacto acumulado a lo largo del tiempo</p>
+          </div>
+          <div class="about__avatar">FD</div>
+          <h3>Felipe Andrés Díaz Avellaneda</h3>
+          <p class="about__role" data-i18n="about.role">Consultor Analytics &amp; AI</p>
+          <p class="about__location">📍 Bogotá, Colombia</p>
+          <div class="about__tags">
+            <span>Analytics</span>
+            <span>AI</span>
+            <span>BI</span>
+            <span>Seguros</span>
+            <span>Salud</span>
+            <span>Transformación Digital</span>
+            <span>Power BI</span>
+            <span>ML</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="services section section--dark" id="servicios">
+    <div class="container">
+      <span class="section-tag" data-i18n="services.tag">Servicios</span>
+      <h2 class="section-title" data-i18n-html="services.title">Soluciones concretas,<br />no consultoría genérica.</h2>
+      <p class="section-sub" data-i18n="services.sub">Cada servicio está diseñado para resolver un problema real de negocio con datos e inteligencia artificial — con experiencia probada en seguros y salud.</p>
+
+      <!-- Nicho salud callout -->
+      <div class="sector-callout">
+        <div class="sector-callout__item">
+          <span class="sector-callout__icon">🏥</span>
+          <div>
+            <strong data-i18n="services.callout.health.title">Especialización en Salud</strong>
+            <p data-i18n="services.callout.health.desc">Cuentas médicas, redes de prestadores, control presupuestal, analítica de servicios y automatización de reportes regulatorios.</p>
+          </div>
+        </div>
+        <div class="sector-callout__divider"></div>
+        <div class="sector-callout__item">
+          <span class="sector-callout__icon">🛡️</span>
+          <div>
+            <strong data-i18n="services.callout.insurance.title">Especialización en Seguros</strong>
+            <p data-i18n="services.callout.insurance.desc">Pricing, reservas, riesgo actuarial, emisión, indemnización y modelos de sostenibilidad financiera.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="services__grid">
+
+        <div class="service-card">
+          <div class="service-card__icon">🔍</div>
+          <h3 data-i18n="s1.title">Diagnóstico Data &amp; AI</h3>
+          <p class="service-card__problem" data-i18n-html="s1.problem"><strong>Problema:</strong> No sabes qué tan madura es tu organización en datos ni por dónde empezar.</p>
+          <ul>
+            <li data-i18n="s1.li1">Evaluación de madurez analítica</li>
+            <li data-i18n="s1.li2">Mapa de oportunidades de automatización</li>
+            <li data-i18n="s1.li3">Hoja de ruta priorizada</li>
+          </ul>
+          <p class="service-card__benefit" data-i18n="s1.benefit">✦ Claridad total sobre dónde estás y qué hacer primero.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">⚙️</div>
+          <h3 data-i18n="s2.title">Automatización de Procesos</h3>
+          <p class="service-card__problem" data-i18n-html="s2.problem"><strong>Problema:</strong> Procesos manuales que consumen tiempo, generan errores y frenan el crecimiento.</p>
+          <ul>
+            <li data-i18n="s2.li1">Identificación de procesos automatizables</li>
+            <li data-i18n="s2.li2">Implementación de flujos inteligentes</li>
+            <li data-i18n="s2.li3">Reducción de carga operativa</li>
+          </ul>
+          <p class="service-card__benefit" data-i18n="s2.benefit">✦ Hasta 80% de reducción en tiempos operativos.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">📊</div>
+          <h3 data-i18n="s3.title">Business Intelligence Estratégico</h3>
+          <p class="service-card__problem" data-i18n-html="s3.problem"><strong>Problema:</strong> Tienes datos pero no información accionable para tomar decisiones.</p>
+          <ul>
+            <li data-i18n="s3.li1">Diseño de dashboards ejecutivos</li>
+            <li data-i18n="s3.li2">Definición de KPIs de negocio</li>
+            <li data-i18n="s3.li3">Reportería automatizada</li>
+          </ul>
+          <p class="service-card__benefit" data-i18n="s3.benefit">✦ Decisiones más rápidas y basadas en evidencia.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">📈</div>
+          <h3 data-i18n="s4.title">Modelos Analíticos de Negocio</h3>
+          <p class="service-card__problem" data-i18n-html="s4.problem"><strong>Problema:</strong> Pricing, riesgo y proyecciones financieras basadas en intuición, no en datos.</p>
+          <ul>
+            <li data-i18n="s4.li1">Modelos de pricing y reservas</li>
+            <li data-i18n="s4.li2">Analítica de riesgo financiero</li>
+            <li data-i18n="s4.li3">Proyecciones y escenarios</li>
+          </ul>
+          <p class="service-card__benefit" data-i18n="s4.benefit">✦ Sostenibilidad financiera respaldada por modelos.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">🧭</div>
+          <h3 data-i18n="s5.title">Estrategia Data Driven</h3>
+          <p class="service-card__problem" data-i18n-html="s5.problem"><strong>Problema:</strong> La organización no está alineada alrededor de los datos como activo estratégico.</p>
+          <ul>
+            <li data-i18n="s5.li1">Diseño de cultura data-driven</li>
+            <li data-i18n="s5.li2">Gobierno del dato</li>
+            <li data-i18n="s5.li3">Alineación negocio-tecnología</li>
+          </ul>
+          <p class="service-card__benefit" data-i18n="s5.benefit">✦ Organización que decide con datos en todos los niveles.</p>
+        </div>
+
+        <div class="service-card service-card--highlight">
+          <div class="service-card__icon">🤖</div>
+          <h3 data-i18n="s6.title">AI Aplicada al Negocio</h3>
+          <p class="service-card__problem" data-i18n-html="s6.problem"><strong>Problema:</strong> Quieres usar AI pero no sabes cómo aplicarla a casos reales de tu industria.</p>
+          <ul>
+            <li data-i18n="s6.li1">Identificación de casos de uso reales</li>
+            <li data-i18n="s6.li2">Implementación de modelos AI</li>
+            <li data-i18n="s6.li3">Chatbots y automatización inteligente</li>
+          </ul>
+          <p class="service-card__benefit" data-i18n="s6.benefit">✦ AI que genera impacto medible, no proyectos piloto eternos.</p>
+        </div>
+
+        <div class="service-card service-card--actuarial">
+          <div class="service-card__icon service-card__icon--actuarial">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+          </div>
+          <h3 data-i18n="s7.title">Analítica Actuarial &amp; Riesgo Financiero</h3>
+          <p class="service-card__problem" data-i18n-html="s7.problem"><strong>Problema:</strong> Decisiones de pricing, reservas y riesgo tomadas sin modelos robustos ni visibilidad financiera real.</p>
+          <ul>
+            <li data-i18n="s7.li1">Modelos de pricing y tarifación</li>
+            <li data-i18n="s7.li2">Análisis de reservas y siniestralidad</li>
+            <li data-i18n="s7.li3">Dashboards de sostenibilidad financiera</li>
+            <li data-i18n="s7.li4">Modelos predictivos de riesgo</li>
+          </ul>
+          <p class="service-card__benefit" data-i18n="s7.benefit">✦ Decisiones financieras respaldadas por modelos, no por intuición.</p>
+          <span class="service-card__niche-badge" data-i18n="s7.badge">Seguros · Salud</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- METODOLOGÍA ADAPT -->
+  <section class="method section" id="metodologia">
+    <div class="container method__layout">
+      <div class="method__left">
+        <span class="section-tag" data-i18n="method.tag">Metodología</span>
+        <h2 class="section-title"><span data-i18n="method.title.plain">El Método </span><span class="gradient-text">A.D.A.P.T</span></h2>
+        <p class="section-sub" data-i18n="method.sub">Un framework probado para llevar a tu organización de los datos al impacto real.</p>
+        <div class="method__steps">
+
+          <div class="method__step">
+            <div class="method__letter">A</div>
+            <div class="method__body">
+              <h3 data-i18n="method.a1.title">Análisis del Negocio</h3>
+              <p data-i18n="method.a1.desc">Entendemos el contexto, los procesos críticos y los objetivos estratégicos antes de tocar un solo dato. El negocio primero.</p>
+            </div>
+          </div>
+
+          <div class="method__step">
+            <div class="method__letter">D</div>
+            <div class="method__body">
+              <h3 data-i18n="method.d.title">Diagnóstico de Datos</h3>
+              <p data-i18n="method.d.desc">Evaluamos la calidad, disponibilidad y madurez de los datos. Identificamos brechas y oportunidades concretas.</p>
+            </div>
+          </div>
+
+          <div class="method__step">
+            <div class="method__letter">A</div>
+            <div class="method__body">
+              <h3 data-i18n="method.a2.title">Automatización de Procesos</h3>
+              <p data-i18n="method.a2.desc">Eliminamos trabajo manual, reducimos errores y liberamos capacidad operativa con automatización inteligente.</p>
+            </div>
+          </div>
+
+          <div class="method__step">
+            <div class="method__letter">P</div>
+            <div class="method__body">
+              <h3 data-i18n="method.p.title">Predicción y Analítica Avanzada</h3>
+              <p data-i18n="method.p.desc">Construimos modelos que anticipan escenarios, optimizan decisiones y generan ventaja competitiva.</p>
+            </div>
+          </div>
+
+          <div class="method__step">
+            <div class="method__letter">T</div>
+            <div class="method__body">
+              <h3 data-i18n="method.t.title">Transformación Organizacional</h3>
+              <p data-i18n="method.t.desc">Acompañamos el cambio cultural y estructural para que los datos sean parte del ADN de la organización.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Dashboard visual decorativo -->
+      <div class="method__right">
+        <div class="dashboard-mock">
+          <div class="dashboard-mock__header">
+            <span class="dashboard-mock__dot" style="background:#ff5f57"></span>
+            <span class="dashboard-mock__dot" style="background:#febc2e"></span>
+            <span class="dashboard-mock__dot" style="background:#28c840"></span>
+            <span class="dashboard-mock__title">Analytics Dashboard</span>
+          </div>
+          <div class="dashboard-mock__body">
+            <!-- KPI cards -->
+            <div class="dash-kpis">
+              <div class="dash-kpi">
+                <span class="dash-kpi__val">↑ 34%</span>
+                <span class="dash-kpi__label" data-i18n="method.dash.kpi1">Eficiencia</span>
+              </div>
+              <div class="dash-kpi dash-kpi--green">
+                <span class="dash-kpi__val">↓ 22%</span>
+                <span class="dash-kpi__label" data-i18n="method.dash.kpi2">Costo Op.</span>
+              </div>
+              <div class="dash-kpi dash-kpi--purple">
+                <span class="dash-kpi__val">98.2%</span>
+                <span class="dash-kpi__label" data-i18n="method.dash.kpi3">Precisión</span>
+              </div>
+            </div>
+            <!-- Area chart -->
+            <div class="dash-chart">
+              <svg viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="areaGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#6c63ff;stop-opacity:0.5"/>
+                    <stop offset="100%" style="stop-color:#6c63ff;stop-opacity:0"/>
+                  </linearGradient>
+                  <linearGradient id="areaGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:0.4"/>
+                    <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:0"/>
+                  </linearGradient>
+                </defs>
+                <!-- Grid lines -->
+                <line x1="0" y1="25" x2="300" y2="25" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                <line x1="0" y1="50" x2="300" y2="50" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                <line x1="0" y1="75" x2="300" y2="75" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+                <!-- Area 1 -->
+                <path d="M0,80 C30,70 60,55 90,45 C120,35 150,30 180,20 C210,12 240,8 300,5 L300,100 L0,100 Z" fill="url(#areaGrad1)"/>
+                <path d="M0,80 C30,70 60,55 90,45 C120,35 150,30 180,20 C210,12 240,8 300,5" fill="none" stroke="#6c63ff" stroke-width="2" stroke-linecap="round"/>
+                <!-- Area 2 -->
+                <path d="M0,90 C40,82 80,70 120,60 C160,50 200,42 300,35 L300,100 L0,100 Z" fill="url(#areaGrad2)"/>
+                <path d="M0,90 C40,82 80,70 120,60 C160,50 200,42 300,35" fill="none" stroke="#00d4aa" stroke-width="2" stroke-linecap="round"/>
+                <!-- Dots -->
+                <circle cx="180" cy="20" r="4" fill="#6c63ff"/>
+                <circle cx="180" cy="20" r="8" fill="#6c63ff" opacity="0.2"/>
+                <circle cx="300" cy="35" r="4" fill="#00d4aa"/>
+                <circle cx="300" cy="35" r="8" fill="#00d4aa" opacity="0.2"/>
+              </svg>
+            </div>
+            <!-- Bar chart -->
+            <div class="dash-bars">
+              <div class="dash-bar-group">
+                <div class="dash-bar-label">Ene</div>
+                <div class="dash-bar-track"><div class="dash-bar" style="height:40%;background:var(--accent)"></div></div>
+              </div>
+              <div class="dash-bar-group">
+                <div class="dash-bar-label">Feb</div>
+                <div class="dash-bar-track"><div class="dash-bar" style="height:60%;background:var(--accent)"></div></div>
+              </div>
+              <div class="dash-bar-group">
+                <div class="dash-bar-label">Mar</div>
+                <div class="dash-bar-track"><div class="dash-bar" style="height:50%;background:var(--accent)"></div></div>
+              </div>
+              <div class="dash-bar-group">
+                <div class="dash-bar-label">Abr</div>
+                <div class="dash-bar-track"><div class="dash-bar" style="height:75%;background:var(--accent2)"></div></div>
+              </div>
+              <div class="dash-bar-group">
+                <div class="dash-bar-label">May</div>
+                <div class="dash-bar-track"><div class="dash-bar" style="height:65%;background:var(--accent2)"></div></div>
+              </div>
+              <div class="dash-bar-group">
+                <div class="dash-bar-label">Jun</div>
+                <div class="dash-bar-track"><div class="dash-bar" style="height:90%;background:var(--accent2)"></div></div>
+              </div>
+            </div>
+            <!-- Donut chart + legend -->
+            <div class="dash-bottom">
+              <svg viewBox="0 0 80 80" class="dash-donut">
+                <circle cx="40" cy="40" r="28" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="12"/>
+                <circle cx="40" cy="40" r="28" fill="none" stroke="#6c63ff" stroke-width="12"
+                  stroke-dasharray="70 106" stroke-dashoffset="0" stroke-linecap="round"/>
+                <circle cx="40" cy="40" r="28" fill="none" stroke="#00d4aa" stroke-width="12"
+                  stroke-dasharray="40 136" stroke-dashoffset="-70" stroke-linecap="round"/>
+                <circle cx="40" cy="40" r="28" fill="none" stroke="#ff6b9d" stroke-width="12"
+                  stroke-dasharray="20 156" stroke-dashoffset="-110" stroke-linecap="round"/>
+                <text x="40" y="44" text-anchor="middle" fill="white" font-size="10" font-weight="700">AI</text>
+              </svg>
+              <div class="dash-legend">
+                <div class="dash-legend-item"><span style="background:#6c63ff"></span><span data-i18n="method.dash.legend1">Analytics 40%</span></div>
+                <div class="dash-legend-item"><span style="background:#00d4aa"></span><span data-i18n="method.dash.legend2">Automatiz. 23%</span></div>
+                <div class="dash-legend-item"><span style="background:#ff6b9d"></span><span data-i18n="method.dash.legend3">AI Models 12%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS DE IMPACTO -->
+  <section class="cases section section--dark" id="casos">
+    <div class="container">
+      <span class="section-tag" data-i18n="cases.tag">Casos de Impacto</span>
+      <h2 class="section-title" data-i18n-html="cases.title">Resultados reales,<br />no promesas.</h2>
+      <p class="section-sub" data-i18n="cases.sub">Ejemplos de transformaciones lideradas a lo largo de mi trayectoria en seguros, salud y analítica actuarial.</p>
+
+      <!-- Visual de impacto -->
+      <div class="impact-visual">
+        <div class="impact-visual__chart">
+          <svg viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="impactGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#6c63ff;stop-opacity:1"/>
+                <stop offset="100%" style="stop-color:#00d4aa;stop-opacity:1"/>
+              </linearGradient>
+            </defs>
+            <!-- Before bar -->
+            <text x="0" y="18" fill="#7878a0" font-size="9" font-family="Inter,sans-serif" data-i18n="impact.before">Antes</text>
+            <rect x="0" y="22" width="380" height="12" rx="6" fill="rgba(255,255,255,0.05)"/>
+            <rect x="0" y="22" width="380" height="12" rx="6" fill="rgba(255,255,255,0.08)"/>
+            <!-- After bar -->
+            <text x="0" y="52" fill="#7878a0" font-size="9" font-family="Inter,sans-serif" data-i18n="impact.after">Después</text>
+            <rect x="0" y="56" width="380" height="12" rx="6" fill="rgba(255,255,255,0.05)"/>
+            <rect x="0" y="56" width="76" height="12" rx="6" fill="url(#impactGrad)"/>
+            <!-- Label -->
+            <text x="84" y="66" fill="#00d4aa" font-size="9" font-weight="700" font-family="Inter,sans-serif" data-i18n="impact.label">80% reducción</text>
+          </svg>
+        </div>
+        <div class="impact-visual__stats">
+          <div class="impact-stat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <span data-i18n="impact.stat1">Procesos automatizados</span>
+          </div>
+          <div class="impact-stat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6c63ff" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span data-i18n="impact.stat2">Modelos analíticos implementados</span>
+          </div>
+          <div class="impact-stat">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6b9d" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span data-i18n="impact.stat3">Tiempo de decisión reducido</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cases__grid">
+
+        <div class="case-card">
+          <div class="case-card__metric">80%</div>
+          <h3 data-i18n="c1.title">Reducción de tiempos operativos</h3>
+          <p data-i18n="c1.desc">Implementación de analítica operativa y automatización de procesos en servicios de salud, reduciendo tiempos de gestión hasta en un 80%.</p>
+          <span class="case-card__sector" data-i18n="c1.sector">Sector Salud</span>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card__metric">15+</div>
+          <h3 data-i18n="c2.title">Equipo de Analytics &amp; AI liderado</h3>
+          <p data-i18n="c2.desc">Construcción y liderazgo de equipo multidisciplinario de analytics e IA para múltiples líneas de negocio en el sector asegurador.</p>
+          <span class="case-card__sector" data-i18n="c2.sector">Sector Seguros</span>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card__metric">Multi</div>
+          <h3 data-i18n="c3.title">Líneas de negocio transformadas</h3>
+          <p data-i18n="c3.desc">Integración de soluciones analíticas en salud (emisión, indemnización, red IPS) y vida, articulando negocio, operaciones y niveles directivos.</p>
+          <span class="case-card__sector" data-i18n="c3.sector">Seguros &amp; Salud</span>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card__metric">100%</div>
+          <h3 data-i18n="c4.title">Automatización de reportes regulatorios</h3>
+          <p data-i18n="c4.desc">Estructuración de datasets y automatización de reportería regulatoria en cuentas médicas, mejorando disponibilidad de información estratégica.</p>
+          <span class="case-card__sector" data-i18n="c4.sector">Sector Salud</span>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card__metric">BI</div>
+          <h3 data-i18n="c5.title">Dashboards ejecutivos de riesgo</h3>
+          <p data-i18n="c5.desc">Desarrollo de modelos de pricing, reservas y dashboards ejecutivos para la toma de decisiones estratégicas en el negocio asegurador.</p>
+          <span class="case-card__sector" data-i18n="c5.sector">Actuaría &amp; Riesgo</span>
+        </div>
+
+        <div class="case-card">
+          <div class="case-card__metric">KPIs</div>
+          <h3 data-i18n="c6.title">Sistema de indicadores estratégicos</h3>
+          <p data-i18n="c6.desc">Implementación de KPIs estratégicos y herramientas BI que mejoraron el control presupuestal y la calidad del servicio en operaciones de salud.</p>
+          <span class="case-card__sector" data-i18n="c6.sector">Operaciones</span>
+        </div>
+
+        <div class="case-card case-card--actuarial">
+          <div class="case-card__metric">Riesgo</div>
+          <h3 data-i18n="c7.title">Modelos actuariales de pricing y reservas</h3>
+          <p data-i18n="c7.desc">Desarrollo de modelos de pricing, análisis de siniestralidad y dashboards de sostenibilidad financiera para la toma de decisiones estratégicas en el negocio asegurador.</p>
+          <span class="case-card__sector case-card__sector--actuarial" data-i18n="c7.sector">Actuaría &amp; Riesgo</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact section" id="contacto">
+    <div class="container contact__inner">
+      <span class="section-tag" data-i18n="contact.tag">Contacto</span>
+      <h2 class="section-title" data-i18n-html="contact.title">¿Listo para transformar<br />tu organización con datos?</h2>
+      <p class="section-sub" data-i18n="contact.sub">Agenda una sesión de diagnóstico gratuita de 30 minutos. Sin compromiso, con valor real.</p>
+      <div class="contact__options">
+        <a href="mailto:felipeprobmx@gmail.com" class="contact__card">
+          <span class="contact__icon">✉️</span>
+          <span class="contact__label" data-i18n="contact.email.label">Email</span>
+          <span class="contact__value">felipeprobmx@gmail.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/felipe-andrés-díaz-avellaneda-199b50138" target="_blank" rel="noopener" class="contact__card">
+          <span class="contact__icon">💼</span>
+          <span class="contact__label" data-i18n="contact.linkedin.label">LinkedIn</span>
+          <span class="contact__value">Felipe Andrés Díaz Avellaneda</span>
+        </a>
+      </div>
+      <a href="mailto:felipeprobmx@gmail.com" class="btn btn--primary btn--large" data-i18n="contact.btn">Agenda tu sesión gratuita →</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p data-i18n="footer.text">© 2026 Felipe Díaz · Analytics &amp; AI Transformation · Bogotá, Colombia</p>
+      <p style="margin-top:0.5rem;opacity:0.5;font-size:0.8rem;" data-i18n="footer.sub">Transformando organizaciones con datos, automatización e inteligencia artificial.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

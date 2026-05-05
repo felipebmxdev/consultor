@@ -51,6 +51,15 @@
 <section class="hero" id="hero">
   <canvas class="hero-canvas" id="heroCanvas"></canvas>
   <div class="hero-noise"></div>
+  <div class="hero-beam"></div>
+  <div class="hero-grid"></div>
+
+  <!-- Floating badges top right -->
+  <div class="hero-badge-float" id="heroBadgeFloat">
+    <div class="hbf-item"><span class="hbf-dot" style="background:#00c896"></span>Seguros &amp; Salud</div>
+    <div class="hbf-item"><span class="hbf-dot" style="background:#7c6dfa"></span>Analytics &amp; AI</div>
+    <div class="hbf-item"><span class="hbf-dot" style="background:#ff375f"></span>Riesgo Actuarial</div>
+  </div>
 
   <div class="hero-content">
     <div class="hero-tag" id="heroTag">
@@ -64,9 +73,12 @@
       <span class="ht-line ht-grad" data-i18n="hero.l3">con datos &amp; AI.</span>
     </h1>
 
-    <p class="hero-sub" id="heroSub" data-i18n="hero.sub">
-      Consultor especializado en Analytics, Inteligencia Artificial y Riesgo Actuarial para Seguros y Salud.
-    </p>
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <p class="hero-sub" id="heroSub" data-i18n="hero.sub">
+        Consultor especializado en Analytics, Inteligencia Artificial y Riesgo Actuarial para Seguros y Salud.
+      </p>
+    </div>
 
     <div class="hero-actions" id="heroActions">
       <a href="#contact" class="btn-primary" data-i18n="hero.cta1">Agenda una sesion</a>
@@ -103,6 +115,7 @@
 </section>
 
 <!-- MARQUEE -->
+<div class="sep"></div>
 <div class="marquee-strip">
   <div class="marquee-inner">
     <div class="marquee-track">
@@ -137,10 +150,12 @@
 <!-- ═══════════════════════════════════════════════════════
      ABOUT
 ═══════════════════════════════════════════════════════ -->
+<div class="sep"></div>
 <section class="about" id="about">
   <div class="wrap">
     <div class="about-grid">
       <div class="about-left">
+        <div class="about-number">15</div>
         <div class="eyebrow" data-i18n="about.tag">Sobre mi</div>
         <h2 class="section-h" data-i18n-html="about.h">Negocio.<br>Datos.<br>AI.</h2>
         <p class="body-text" data-i18n-html="about.p1">Soy Felipe Diaz, consultor con mas de <strong>15 anos</strong> liderando transformaciones en <strong>seguros y salud</strong>. Empece en operaciones, entendi el negocio desde adentro.</p>

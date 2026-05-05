@@ -205,11 +205,12 @@ gsap.registerPlugin(ScrollTrigger);
 // Hero entrance
 const tl = gsap.timeline({defaults:{ease:'power3.out'}});
 tl.to('#heroTag',{opacity:1,y:0,duration:0.8,delay:0.3})
-  .to('.ht-line',{opacity:1,y:0,duration:0.9,stagger:0.12,ease:'power4.out'},'-=0.4')
-  .to('#heroSub',{opacity:1,y:0,duration:0.7},'-=0.3')
-  .to('#heroActions',{opacity:1,y:0,duration:0.6},'-=0.4')
+  .to('.ht-line',{opacity:1,y:0,clipPath:'inset(0 0 0% 0)',duration:1,stagger:0.15,ease:'power4.out'},'-=0.4')
+  .to('.hero-divider',{opacity:1,y:0,duration:0.7},'-=0.2')
+  .to('#heroActions',{opacity:1,y:0,duration:0.6},'-=0.3')
   .to('#heroStats',{opacity:1,y:0,duration:0.6},'-=0.3')
-  .to('.hero-scroll-hint',{opacity:1,duration:0.5},'-=0.2');
+  .to('.hero-scroll-hint',{opacity:1,duration:0.5},'-=0.2')
+  .to('#heroBadgeFloat',{opacity:1,x:0,duration:0.8,ease:'power3.out'},'-=0.8');
 
 // Counter animation
 function animCount(el){
@@ -256,6 +257,9 @@ document.querySelectorAll('.section-h').forEach(el=>{
   gsap.from(el,{opacity:0,y:40,duration:0.9,ease:'power3.out',
     scrollTrigger:{trigger:el,start:'top 85%',once:true}});
 });
+
+// Set initial state for badge float
+gsap.set('#heroBadgeFloat', {x: 30});
 
 // Active nav
 const sections = document.querySelectorAll('section[id]');

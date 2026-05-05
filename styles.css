@@ -753,3 +753,433 @@ body:has(button:hover) .cursor-follower{
   .wrap{padding:0 1.5rem}
   .about,.services,.method,.cases,.contact{padding:6rem 0}
 }
+/* ================================================================
+   HERO — CINEMATIC REWRITE
+   ================================================================ */
+
+/* Override hero title to be MASSIVE */
+.hero-title {
+  font-size: clamp(5rem, 13vw, 11rem);
+  font-weight: 900;
+  line-height: 0.88;
+  letter-spacing: -6px;
+  margin-bottom: 3rem;
+  overflow: visible;
+}
+
+.ht-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(110%);
+  clip-path: inset(0 0 100% 0);
+}
+
+.ht-line--indent {
+  padding-left: clamp(3rem, 10vw, 10rem);
+}
+
+/* Glowing gradient text */
+.ht-grad {
+  background: linear-gradient(90deg, #a89dff 0%, #00e8aa 50%, #a89dff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Hero sub — bigger and more impactful */
+.hero-sub {
+  font-size: 1.3rem;
+  max-width: 620px;
+  color: rgba(240,240,245,0.55);
+  letter-spacing: -0.2px;
+}
+
+/* Stats — more dramatic */
+.hero-stats {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 1.8rem 2.5rem;
+  backdrop-filter: blur(20px);
+}
+
+.hstat-n {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+/* ── LIGHT BEAM ── */
+.hero-beam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(124,109,250,0.6) 30%,
+    rgba(0,200,150,0.4) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  animation: beamPulse 6s ease-in-out infinite;
+}
+
+.hero-beam::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(124,109,250,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+@keyframes beamPulse {
+  0%, 100% { opacity: 0; }
+  30%, 70% { opacity: 1; }
+}
+
+/* ── HERO GRID LINES — more visible ── */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(124,109,250,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,109,250,0.07) 1px, transparent 1px);
+  background-size: 100px 100px;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 30%, transparent 100%);
+}
+
+/* ── HERO TAG — more prominent ── */
+.hero-tag {
+  font-size: 12px;
+  letter-spacing: 3px;
+  padding: 0.6rem 1.4rem;
+  border-color: rgba(0,200,150,0.3);
+  background: rgba(0,200,150,0.07);
+  margin-bottom: 3rem;
+}
+
+/* ── SECTION TITLES — bigger ── */
+.section-h {
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: -2.5px;
+}
+
+/* ── ABOUT — more dramatic ── */
+.about-left .section-h {
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  letter-spacing: -3px;
+  line-height: 0.9;
+}
+
+/* ── CONTACT — full drama ── */
+.contact-h {
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  letter-spacing: -3px;
+  line-height: 0.95;
+}
+
+/* ── GLOW LINES — decorative horizontal lines ── */
+.glow-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(124,109,250,0.4) 30%,
+    rgba(0,200,150,0.4) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* ── SERVICES — dramatic numbers ── */
+.svc-num {
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+  opacity: 0.15;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  background: var(--white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity 0.3s;
+}
+
+.svc-card:hover .svc-num {
+  opacity: 1;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ── CASE METRICS — even bigger ── */
+.cc-metric {
+  font-size: 4.5rem;
+  letter-spacing: -3px;
+  line-height: 0.9;
+  margin-bottom: 1rem;
+}
+
+/* ── MARQUEE — more contrast ── */
+.marquee-track span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(240,240,245,0.25);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.marquee-track .dot {
+  color: var(--purple);
+  opacity: 0.5;
+}
+
+/* ── EYEBROW — refined ── */
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--teal);
+}
+
+/* ── PROFILE CARD — glow effect ── */
+.profile-card {
+  box-shadow:
+    0 0 0 1px rgba(124,109,250,0.1),
+    0 40px 80px rgba(0,0,0,0.8),
+    0 0 60px rgba(124,109,250,0.08);
+}
+
+/* ── SECTOR ITEMS — bigger text ── */
+.sector-item h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.8rem;
+}
+
+/* ── ADAPT LETTERS — bigger ── */
+.adapt-letter {
+  width: 4.5rem;
+  height: 4.5rem;
+  font-size: 1.5rem;
+  box-shadow: 0 0 30px rgba(124,109,250,0.3), 0 0 80px rgba(124,109,250,0.1);
+}
+
+/* ── FOOTER — minimal ── */
+.footer {
+  padding: 4rem 0;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: rgba(240,240,245,0.3);
+}
+
+/* ── HORIZONTAL RULE GRADIENT ── */
+hr.grad-rule {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124,109,250,0.3), rgba(0,200,150,0.3), transparent);
+  margin: 0;
+}
+
+/* ── HERO DIVIDER ── */
+.hero-divider {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-divider-line {
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(180deg, var(--purple), var(--teal));
+  flex-shrink: 0;
+  margin-top: 0.3rem;
+  opacity: 0.6;
+}
+
+.hero-sub {
+  margin-bottom: 0;
+  opacity: 1;
+  transform: none;
+}
+
+/* ── FLOATING BADGE — top right corner ── */
+.hero-badge-float {
+  position: absolute;
+  top: 8rem;
+  right: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  z-index: 3;
+  opacity: 0;
+}
+
+.hbf-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(240,240,245,0.5);
+  backdrop-filter: blur(10px);
+}
+
+.hbf-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ── SECTION SEPARATOR ── */
+.sep {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(124,109,250,0.2) 20%,
+    rgba(0,200,150,0.2) 80%,
+    transparent 100%
+  );
+  margin: 0;
+}
+
+/* ── ABOUT — split layout with huge number ── */
+.about-number {
+  position: absolute;
+  right: -2rem;
+  top: -3rem;
+  font-size: 20rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.02);
+  letter-spacing: -10px;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.about {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── SERVICES — number overlay ── */
+.svc-card {
+  position: relative;
+}
+
+.svc-card::after {
+  content: attr(data-index);
+  position: absolute;
+  bottom: -1rem;
+  right: 1rem;
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.025);
+  letter-spacing: -4px;
+  line-height: 1;
+  pointer-events: none;
+  transition: color 0.3s;
+}
+
+.svc-card:hover::after {
+  color: rgba(124,109,250,0.06);
+}
+
+/* ── CASES — metric glow ── */
+.case-card:hover .cc-metric {
+  text-shadow: 0 0 40px rgba(124,109,250,0.3);
+}
+
+/* ── CONTACT — massive CTA ── */
+.contact-inner .btn-primary {
+  font-size: 1.1rem;
+  padding: 1.2rem 3.5rem;
+  box-shadow: 0 0 60px rgba(124,109,250,0.2);
+}
+
+.contact-inner .btn-primary:hover {
+  box-shadow: 0 0 80px rgba(124,109,250,0.4), 0 20px 60px rgba(124,109,250,0.3);
+}
+
+/* ── NAV LOGO MARK — pulse ── */
+.logo-mark {
+  animation: logoPulse 4s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(124,109,250,0.3); }
+  50% { box-shadow: 0 0 40px rgba(124,109,250,0.5), 0 0 80px rgba(124,109,250,0.15); }
+}
+
+/* ── SCROLL PROGRESS — thicker ── */
+.progress {
+  height: 2px;
+  background: linear-gradient(90deg, #7c6dfa, #00c896, #7c6dfa);
+  background-size: 200% auto;
+  animation: progressShimmer 3s linear infinite;
+}
+
+@keyframes progressShimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── CURSOR — more dramatic ── */
+.cursor {
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.8);
+}
+
+.cursor-follower {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(124,109,250,0.5);
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1), width 0.3s, height 0.3s;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .hero-title { font-size: clamp(3.5rem, 14vw, 6rem); letter-spacing: -3px; }
+  .hero-badge-float { display: none; }
+  .hero-divider { flex-direction: column; gap: 1rem; }
+  .hero-divider-line { width: 40px; height: 1px; }
+  .about-number { display: none; }
+}
+
+/* ── FIX: ht-line initial state for GSAP clip-path ── */
+.ht-line {
+  display: block;
+  opacity: 0;
+  transform: translateY(110%);
+  overflow: hidden;
+}
